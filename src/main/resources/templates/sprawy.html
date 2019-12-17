@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template :asda Binary Admin</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- MORRIS CHART STYLES-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="assets/font-awesome-2/css/font-awesome.min.css">
+
+    <script  src="assets/js/timer.js" ></script>
+
+</head>
+
+<body onload ="odliczanie();">
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+                    <img src="assets/img/RED-USER.png" class="user-image img-responsive"/>
+					
+					</li>
+				
+					
+                    <li>
+                        <a   href="/klienci"><i class="fa fa-users fa-3x"></i>Klienci</a>
+
+                    </li>
+                     <li>
+						<a   href="/polisy"><i class="fa fa-file-text fa-3x"></i> Polisy</a>
+                    </li>
+		
+					 <li>
+						<a  class="active-menu" href="/sprawy"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
+                    </li>
+					<li>
+						<a  href="ui.html"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
+                    </li>
+                </ul>
+               
+            </div>
+            
+   </nav> 
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="clock"> </div>
+                    <h2>Sprawy</h2>
+
+                </div>
+
+            </div>
+            <a href="/dodaniesprawy" class="btn btn-success btn-sm"	>Dodaj Sprawę</a>
+                <!-- /. ROW  -->
+                <hr />
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                            </div>
+
+
+                            <div class="panel-body">
+
+                                <div class="table-responsive">
+
+                                    <table class="table table-striped table-bordered table-hover " id="dataTables-example">
+
+                                        <thead >
+
+                                        <tr>
+										    <th>Numer sprawy</th>
+                                            <th>Kogo dotyczy</th>
+                                            <th>Opiekun</th>
+                                            <th>Data rozpoczęcia</th>
+											<th>Data zakończenia</th>
+                                            <th>Rodzaj szkody</th>
+											
+                                            <th  style="width: 80px;"> Podgląd </th>
+                                            <th  style="width: 60px;"> Edytuj </th>
+                                            <th  style="width: 60px;"> Usuń </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="sprawyy: ${sprawy}">
+                                            <td th:text="${sprawyy.numer_sprawy}"></td>
+											<td th:text="${sprawyy.klient}"></td>
+                                            <td th:text="${sprawyy.opiekun}"></td>
+                                            <td th:text="${sprawyy.data_rozpoczecia}"></td>
+											<td th:text="${sprawyy.dane_zakonczenia}"></td>
+											<td th:text="${sprawyy.rodzaj_szkody}"></td>
+
+                                            <td style="width: 80px;"><a th:href="${'/product/edit/'}"            class="btn btn-info btn-sm">Podgląd</a></td>
+                                            <td style="width: 60px;"><a  th:href="${'/sprawy'+sprawyy.id}"        class="btn btn-primary btn-sm">Edytuj</a></td>
+                                            <td style="width: 60px;"><a th:href="${'/sprawy/usun/'+sprawyy.id}"   class="btn btn-danger btn-sm" >Usuń</a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
+</html>
