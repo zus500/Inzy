@@ -15,9 +15,5 @@ public class PolisaBean {
         return  new Polisa();
     }
 
-    @Bean
-    public ServicePolisa servicePolisa ()
-    {
-        return new ServicePolisa();
-    }
+
 }

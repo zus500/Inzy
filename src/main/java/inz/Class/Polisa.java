@@ -1,6 +1,7 @@
 package inz.Class;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Polisa {
@@ -15,6 +16,7 @@ public class Polisa {
     @Column
     private  String numer_polisy;
 
+    @NotEmpty
     @Column
     private  String ubezpieczyciel;
 

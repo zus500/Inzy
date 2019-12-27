@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" th:href="@{assets/css/registration.css}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<a href="/login"><button  class="btn btn-md btn-danger btn-block" type="Submit">Powrót</button></a>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form autocomplete="off" th:object="${pracownik}" method="post" action="#" role="form" class="form-horizontal" th:action="@{/rejestracja}">
+					<h2>Rejestracja</h2>
+					<div class="form-group">
+						<div class="col-sm-9">
+						<input  placeholder="Imię" class="form-control" th:field="*{imie}" />
+							<label class="validation-message"  th:if="${#fields.hasErrors('imie')}" th:errors="*{imie}">/</label>
+						</div>
+					</div>
+					<div class="form-group">
+					<div class="col-sm-9">
+						<input type="text" placeholder="Nazwisko" class="form-control" th:field="*{nazwisko}" />
+						<label class="validation-message" th:if="${#fields.hasErrors('nazwisko')}" th:errors="*{nazwisko}">/</label>
+					</div>
+				</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" placeholder="Email" class="form-control" th:field="*{email}" />
+							<label class="validation-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">/</label>
+						</div>
+					</div>
+					<!--<div class="form-group">-->
+						<!--<div class="col-sm-9">-->
+							<!--<input type="text" placeholder="Email" class="form-control"th:field="*{email}"/>-->
+							<!--<label class="validation-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>-->
+						<!--</div>-->
+					<!--</div>-->
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="password" placeholder="Hasło" class="form-control" th:field="*{haslo}"/>
+							<label class="validation-message" th:if="${#fields.hasErrors('haslo')}" th:errors="*{haslo}">/</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Zarejestruj</button>
+						</div>
+					</div>
+					<span id="komentarz" th:utext="${sukces}"></span>
+				</form>
+
+			</div>
+
+			</div>
+
+		</div>
+</body>
+</html>

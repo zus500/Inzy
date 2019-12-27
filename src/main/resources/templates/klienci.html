@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Bootstrap Admin Template :asda Binary Admin</title>
     <!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link  th:href="@{/assets/css/bootstrap.css}" rel="stylesheet"  type="text/css"  />
     <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link th:href="@{/assets/css/font-awesome.css}" rel="stylesheet"  type="text/css"  />
     <!-- MORRIS CHART STYLES-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link th:href="@{/assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet"  type="text/css" />
     <!-- CUSTOM STYLES-->
-    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link th:href="@{/assets/css/custom.css}" rel="stylesheet"  type="text/css" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -30,7 +30,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/RED-USER.png" class="user-image img-responsive"/>
+                    <img src="/assets/img/RED-USER.png" class="user-image img-responsive"/>
 					
 					</li>
 				
@@ -47,7 +47,7 @@
 						<a  href="/sprawy"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
                     </li>
 					<li>
-						<a  href="ui.html"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
+						<a  href="/logout"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
                     </li>
                 </ul>
                

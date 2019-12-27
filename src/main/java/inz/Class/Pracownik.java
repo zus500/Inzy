@@ -1,7 +1,21 @@
 package inz.Class;
 
-import javax.persistence.*;
+import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import javax.validation.constraints.Email;
+
+import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.data.annotation.Transient;
 @Entity
 public class Pracownik {
 
@@ -10,20 +24,44 @@ public class Pracownik {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Integer idd;
-
     @Column
+    @NotEmpty(message = "Imię nie może być puste")
     private String imie;
-
     @Column
+    @NotEmpty(message = "Nazwisko nie może być puste")
     private String nazwisko;
-
     @Column
-    private String login;
-
-    @Column
+    @Transient
+    @Length(min = 5, message = "Hasło musi mieć więcej niż 5 znaków")
+    @NotEmpty(message = "Hasło nie może być puste")
     private String haslo;
+    @Column
+    @NotEmpty(message = "Email nie może być pusty")
+    @Email(message = "Musisz podać email")
+    private String email;
 
+    @Column
+    private Boolean active;
 
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    @ManyToMany
+    @JoinTable
+    private Set<Role> roles;
 
     public Integer getId() {
         return idd;
@@ -49,14 +87,6 @@ public class Pracownik {
         this.nazwisko = nazwisko;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getHaslo() {
         return haslo;
     }
@@ -66,6 +96,14 @@ public class Pracownik {
     }
 
     public Pracownik() {
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -80,4 +118,5 @@ public class Pracownik {
     public void setIdd(Integer idd) {
         this.idd = idd;
     }
+
 }

@@ -17,6 +17,7 @@ public class ServiceKlient {
     @Autowired
     RepositoryKlient repositoryKlient;
 
+
     public List<Klient> getAllKlient()
     {
         List<Klient> result = (List<Klient>)repositoryKlient.findAll();
@@ -64,6 +65,7 @@ public class ServiceKlient {
                 newEntity.setNr_domu_mieszkania(entity.getNr_domu_mieszkania());
                 newEntity.setNumer_telefonu(entity.getNumer_telefonu());
                 newEntity.setPracownik(entity.getPracownik());
+                newEntity.setE_mail(entity.getE_mail());
                 newEntity = repositoryKlient.save(newEntity);
 
                 return newEntity;
@@ -86,5 +88,4 @@ public class ServiceKlient {
         }
     }
 
-    public  Klient znajdzemail(String email){return repositoryKlient.findByEmail(email); }
 }

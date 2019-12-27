@@ -15,8 +15,4 @@ public class SprawyBean {
     }
 
 
-    @Bean
-    public ServiceSprawy serviceSprawy(){
-        return new ServiceSprawy();
-    }
 }
