@@ -37,7 +37,7 @@ public class ControlerDodanieKlienta {
         klient.setPracownik(pracownik);
         serviceKlient.createOrUpdateKlient(klient);
 
-        return "redirect:/klienci";
+        return "redirect:/strona/klienci";
     }
 
 }

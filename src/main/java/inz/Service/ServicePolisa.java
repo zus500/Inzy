@@ -86,4 +86,5 @@ public class ServicePolisa {
             throw new RecordNotFoundException("No employee record exist for given id");
         }
     }
+    public Polisa findByNumberPolisa(String number ){return repositoryPolisa.findByNumer_polisy(number); }
 }

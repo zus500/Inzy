@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="assets/font-awesome-2/css/font-awesome.min.css">
 
-    <script  src="assets/js/timer.js" ></script>
+    <script  th:src="@{/assets/js/timer.js}" ></script>
 
 </head>
 
@@ -30,21 +30,21 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="/assets/img/RED-USER.png" class="user-image img-responsive"/>
+                    <img th:src="@{/assets/img/RED-USER.png}" class="user-image img-responsive"/>
 					
 					</li>
 				
 					
                     <li>
-                        <a class="active-menu"   href="/klienci"><i class="fa fa-users fa-3x"></i>Klienci</a>
+                        <a class="active-menu"   href="/strona/klienci"><i class="fa fa-users fa-3x"></i>Klienci</a>
 
                     </li>
                      <li>
-						<a href="/polisy"><i class="fa fa-file-text fa-3x"></i> Polisy</a>
+						<a href="/strona/polisy"><i class="fa fa-file-text fa-3x"></i> Polisy</a>
                     </li>
 		
 					 <li>
-						<a  href="/sprawy"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
+						<a  href="/strona/sprawy"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
                     </li>
 					<li>
 						<a  href="/logout"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
@@ -119,22 +119,17 @@
         </div>
     </div>
 
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- DATA TABLE SCRIPTS -->
-<script src="assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-
+    <script th:src="@{/assets/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/js/jquery.metisMenu.js}"></script>
+    <script th:src="@{/assets/js/dataTables/jquery.dataTables.js}"></script>
+    <script th:src="@{/assets/js/dataTables/dataTables.bootstrap.js}"></script>
     <script>
         $(document).ready(function () {
             $('#dataTables-example').dataTable();
         });
     </script>
-    <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    <script th:src="@{/assets/js/custom.js}"></script>
 
 
 </body>

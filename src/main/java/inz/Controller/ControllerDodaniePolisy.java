@@ -35,6 +35,6 @@ public class ControllerDodaniePolisy {
 
         polisa.setKlient(klient);
         servicePolisa.createOrUpdatePolisa(polisa);
-        return "redirect:/polisy";
+        return "redirect:/strona/polisy";
     }
 }

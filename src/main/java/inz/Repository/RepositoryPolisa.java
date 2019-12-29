@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface RepositoryPolisa extends CrudRepository <Polisa, Integer> {
 
+    Polisa findByNumer_polisy(String numerpolisy);
 }

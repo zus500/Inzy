@@ -12,11 +12,11 @@ public class Polisa {
     @Column
     private Integer id;
 
-
+    @NotEmpty(message = "Numer polisy nie może być pusty")
     @Column
     private  String numer_polisy;
 
-    @NotEmpty
+    @NotEmpty(message = "Podaj nazwę ubezpieczalni")
     @Column
     private  String ubezpieczyciel;
 

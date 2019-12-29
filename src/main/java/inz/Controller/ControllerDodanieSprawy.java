@@ -25,7 +25,7 @@ public class ControllerDodanieSprawy {
     public String zapisz(@ModelAttribute("id")Sprawy sprawy)
     {   System.out.print(sprawy);
         serviceSprawy.createOrUpdateSprawy(sprawy);
-        return  "redirect:/sprawy";
+        return  "redirect:/strona/sprawy";
     }
 
 

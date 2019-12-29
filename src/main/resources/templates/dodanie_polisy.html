@@ -24,31 +24,31 @@
 <body onload ="odliczanie();">
 <div id="wrapper">
     <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-				<li class="text-center">
-                    <img src="assets/img/RED-USER.png" class="user-image img-responsive"/>
-					
-					</li>
-				
-					
-                    <li>
-                       <a href="klienci.html"><i class="fa fa-users fa-3x"></i>Klienci</a>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li class="text-center">
+                    <img th:src="@{/assets/img/RED-USER.png}" class="user-image img-responsive"/>
 
-                    </li>
-                     <li>
-						<a href="polisy.html" class="active-menu"><i class="fa fa-file-text fa-3x"></i> Polisy</a>
-                    </li>
-		
-					 <li>
-						<a  href="sprawy.html"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
-                    </li>
-					<li>
-						<a  href="ui.html"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
-                    </li>
-                </ul>
-               
-            </div>
+                </li>
+
+
+                <li>
+                    <a href="/strona/klienci"><i class="fa fa-users fa-3x"></i>Klienci</a>
+
+                </li>
+                <li>
+                    <a href="/strona/polisy" class="active-menu"><i class="fa fa-file-text fa-3x"></i> Polisy</a>
+                </li>
+
+                <li>
+                    <a  href="/strona/sprawy"><i class="fa fa-calendar fa-3x"></i> Sprawy</a>
+                </li>
+                <li>
+                    <a  href="/logout"><i class="fa fa-users fa-3x"></i> Wyloguj</a>
+                </li>
+            </ul>
+
+        </div>
             
    </nav>
         <!-- /. TU SIĘ KOŃCZY LEWA STRONA A ZACZYNA ŚRODEK  -->
